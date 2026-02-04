@@ -68,7 +68,7 @@ Response
 POST /auth/login
 ```
 Request
-```
+```json
 {
   "email": "user@gmail.com",
   "password": "1234"
