@@ -43,6 +43,18 @@ Two roles:
 - **User**
 - **Admin**
 
+## 🔑 Demo Credentials
+
+Use the following demo accounts to test role-based access:
+
+### 👤 Admin
+Email: ak@gmail.com 
+Password: 1234  
+
+### 👥 User
+Email: ak2@gmail.com 
+Password: 12345  
+
 | Feature | User | Admin |
 |------|------|------|
 | Register & Login | ✅ | ✅ |
