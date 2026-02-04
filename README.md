@@ -43,6 +43,159 @@ Two roles:
 - **User**
 - **Admin**
 
+🔐 Authentication APIs
+1️⃣ Register User
+POST /auth/register
+Request
+{
+  "email": "user@gmail.com",
+  "password": "1234"
+}
+Response
+{
+  "id": 5,
+  "email": "user@gmail.com",
+  "role": "user"
+}
+2️⃣ Login User
+POST /auth/login
+Request
+{
+  "email": "user@gmail.com",
+  "password": "1234"
+}
+Response
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIs...",
+  "token_type": "bearer",
+  "role": "user"
+}
+Save this token in frontend:
+Authorization: Bearer <token>
+
+3️⃣ Get Logged-In User
+GET /auth/me
+Headers
+Authorization: Bearer <token>
+Response
+{
+  "id": 5,
+  "email": "user@gmail.com",
+  "role": "user"
+}
+
+👨‍💼 Admin APIs
+4️⃣ Get All Users (Admin Only)
+GET /auth/users
+Headers
+Authorization: Bearer <admin-token>
+Response
+[
+  {
+    "id": 1,
+    "email": "admin@gmail.com",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "email": "user@gmail.com",
+    "role": "user"
+  }
+]
+
+5️⃣ Promote User to Admin
+PUT /auth/promote/{user_id}
+Example:
+PUT /auth/promote/2
+Headers
+Authorization: Bearer <admin-token>
+Response
+{
+  "message": "User promoted to admin"
+}
+
+✅ Task APIs
+6️⃣ Create Task
+POST /tasks
+Headers
+Authorization: Bearer <token>
+Request
+{
+  "title": "Finish frontend",
+  "description": "Build dashboard UI"
+}
+Response
+{
+  "id": 3,
+  "title": "Finish frontend",
+  "description": "Build dashboard UI",
+  "user_id": 5
+}
+
+7️⃣ Get My Tasks (User)
+GET /tasks
+Headers
+Authorization: Bearer <user-token>
+Response
+[
+  {
+    "id": 3,
+    "title": "Finish frontend",
+    "description": "Build dashboard UI"
+  }
+]
+
+8️⃣ Get All Tasks (Admin)
+GET /tasks/all
+Headers
+Authorization: Bearer <admin-token>
+Response
+[
+  {
+    "id": 1,
+    "title": "Backend",
+    "description": "Fix auth",
+    "user_id": 2
+  },
+  {
+    "id": 3,
+    "title": "Frontend",
+    "description": "Build UI",
+    "user_id": 5
+  }
+]
+
+9️⃣ Update Own Task (User)
+PUT /tasks/{task_id}
+Example:
+PUT /tasks/3
+Headers
+Authorization: Bearer <user-token>
+Request
+{
+  "title": "Finish frontend UI",
+  "description": "Dashboard + Login"
+}
+Response
+{
+  "message": "Task updated"
+}
+
+9️⃣ Update Own Task (User)
+PUT /tasks/{task_id}
+Example:
+PUT /tasks/3
+Headers
+Authorization: Bearer <user-token>
+Request
+{
+  "title": "Finish frontend UI",
+  "description": "Dashboard + Login"
+}
+Response
+{
+  "message": "Task updated"
+}
 ## 🔑 Demo Credentials
 
 Use the following demo accounts to test role-based access:
