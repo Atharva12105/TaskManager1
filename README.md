@@ -1,3 +1,5 @@
+Deployment: https://task-frontend-iech.vercel.app
+
 # 🚀 Task Manager SaaS – PrimeTrade Internship Assignment
 
 A full-stack, role-based Task Management System built as part of the **PrimeTrade Backend & Frontend Developer Internship Assignment**.  
