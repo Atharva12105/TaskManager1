@@ -50,6 +50,7 @@ Two roles:
 ### 1️⃣ Register User  
 **POST** `/auth/register`
 
+```
 **Request**
 ```json
 {
@@ -62,19 +63,24 @@ Response
   "email": "user@gmail.com",
   "role": "user"
 }
+```
 2️⃣ Login User
 POST /auth/login
+```
 Request
+```
 {
   "email": "user@gmail.com",
   "password": "1234"
 }
 Response
+
 {
   "access_token": "eyJhbGciOiJIUzI1NiIs...",
   "token_type": "bearer",
   "role": "user"
 }
+```
 Save in frontend:
 Authorization: Bearer <access_token>
 
