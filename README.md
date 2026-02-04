@@ -1,4 +1,4 @@
-Deployment: https://task-frontend-iech.vercel.app
+
 
 # 🚀 Task Manager SaaS – PrimeTrade Internship Assignment
 
@@ -313,6 +313,8 @@ NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api/v1
 ```
 
 🚀 Deployment
+Deployment: https://task-frontend-iech.vercel.app;
+```
 Frontend deployed on Vercel
 Backend deployed on Vercel
 Database hosted on Neon
@@ -330,6 +332,7 @@ Rate limiting
 Background workers
 Docker containers
 Load balancing
+```
 
 
 
