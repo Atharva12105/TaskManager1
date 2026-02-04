@@ -84,6 +84,135 @@ Response
 Save in frontend:
 Authorization: Bearer <access_token>
 
+3️⃣ Get Logged-In User
+GET /auth/me
+```
+Headers
+Authorization: Bearer <token>
+
+Response
+```json
+{
+  "id": 5,
+  "email": "user@gmail.com",
+  "role": "user"
+}
+```
+
+👨‍💼 Admin APIs
+4️⃣ Get All Users (Admin Only)
+GET /auth/users
+```
+Headers
+Authorization: Bearer <admin-token>
+Response
+```json
+[
+  {
+    "id": 1,
+    "email": "admin@gmail.com",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "email": "user@gmail.com",
+    "role": "user"
+  }
+]
+```
+
+5️⃣ Promote User to Admin
+PUT /auth/promote/{user_id}
+Example
+```
+PUT /auth/promote/2
+Headers
+Authorization: Bearer <admin-token>
+Response
+```json
+{
+  "message": "User promoted to admin"
+}
+```
+✅ Task APIs
+6️⃣ Create Task
+POST /tasks
+```
+Headers
+Authorization: Bearer <token>
+Request
+```json
+{
+  "title": "Finish frontend",
+  "description": "Build dashboard UI"
+}
+Response
+{
+  "id": 3,
+  "title": "Finish frontend",
+  "description": "Build dashboard UI",
+  "user_id": 5
+}
+```
+7️⃣ Get My Tasks (User)
+GET /tasks
+```
+Headers
+Authorization: Bearer <user-token>
+Response
+```json
+[
+  {
+    "id": 3,
+    "title": "Finish frontend",
+    "description": "Build dashboard UI"
+  }
+]
+```
+8️⃣ Get All Tasks (Admin Only)
+GET /tasks/all
+```
+Headers
+Authorization: Bearer <admin-token>
+Response
+```json
+[
+  {
+    "id": 1,
+    "title": "Backend",
+    "description": "Fix auth",
+    "user_id": 2
+  },
+  {
+    "id": 3,
+    "title": "Frontend",
+    "description": "Build UI",
+    "user_id": 5
+  }
+]
+```
+9️⃣ Update Own Task (User)
+PUT /tasks/{task_id}
+```
+Example
+PUT /tasks/3
+Headers
+Authorization: Bearer <user-token>
+```json
+Request
+{
+  "title": "Finish frontend UI",
+  "description": "Dashboard + Login"
+}
+Response
+{
+  "message": "Task updated"
+}
+```
+
+
+
+
 
 
 ## 🔑 Demo Credentials
@@ -181,6 +310,7 @@ npm run dev
 
 Create .env.local:
 NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api/v1
+```
 
 🚀 Deployment
 Frontend deployed on Vercel
