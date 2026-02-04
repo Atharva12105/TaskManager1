@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 🚀 Task Manager SaaS – PrimeTrade Internship Assignment
 A full-stack, role-based Task Management system built as part of the PrimeTrade Backend / Frontend Developer Internship Assignment.
 The project demonstrates secure authentication, role-based access control, REST APIs, cloud database integration, and a production-ready frontend.
@@ -121,3 +122,6 @@ Rate limiting
 Microservices
 Queue workers
 Docker containers
+=======
+
+>>>>>>> cde398888095b220541bf19db03dd034d9e9f52f
