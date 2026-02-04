@@ -22,7 +22,7 @@ Vercel (Frontend + Backend hosting)
 Neon (Cloud PostgreSQL)
 GitHub (Version control)
 
-🔐 Features
+🔐 Features.
 Authentication
 User registration
 Secure password hashing (bcrypt)
